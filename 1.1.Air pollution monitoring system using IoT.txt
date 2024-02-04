@@ -11,7 +11,7 @@ public:
     AirQualityMonitor(int threshold) : ppmThreshold(threshold), currentPPM(0) {}
 
     void setRandomPPM() {
-        currentPPM = rand() % 401;  // Simulating PPM values between 0 and 400
+        currentPPM = rand() % 401; 
     }
 
     void displayPPM() {
@@ -21,20 +21,19 @@ public:
     void checkAirQuality() {
         if (currentPPM > ppmThreshold) {
             std::cout << "Air quality deteriorating! Triggering alarm." << std::endl;
-            // Add code here to trigger an alarm (e.g., send notification, sound alarm)
+           
         }
     }
 
     void saveLog() {
-        // Add code here to save logs for future analysis
         std::cout << "Log saved for future analysis." << std::endl;
     }
 };
 
 int main() {
-    srand(time(0));  // Seed for random values
+    srand(time(0)); 
 
-    AirQualityMonitor airMonitor(150);  // Set the PPM threshold
+    AirQualityMonitor airMonitor(150);  
 
     for (int i = 0; i < 5; ++i) {
         airMonitor.setRandomPPM();
